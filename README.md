@@ -1,12 +1,12 @@
 # Emergency Response Time Prediction
 
-This repository presents a robust machine learning framework designed to predict emergency response times. By integrating diverse datasets including emergency event logs, vehicle telemetry, and routing information from OSRM (Open Source Routing Machine), the framework aims to deliver highly accurate and actionable predictions.
+This repository presents a robust machine learning framework designed to predict critical emergency response times. By integrating diverse datasets, including emergency event logs, vehicle telemetry, and routing information from OSRM (Open Source Routing Machine), the framework aims to deliver highly accurate and actionable predictions.
 
 ## Overview
 
 The core objective of this project is to develop machine learning models capable of accurately forecasting one of two critical emergency response time metrics:
 
-*   `delta selection-departure`: The time elapsed from an emergency vehicle's selection to its actual departure.
+*   `delta selection-departure`: The time elapsed from an emergency vehicle's selection to its actual departure from the station.
 *   `delta departure-presentation`: The duration from an emergency vehicle's departure until its arrival at the incident location.
 
 The codebase is structured into modular components covering data loading, feature engineering, model selection, training, and evaluation. This design ensures maintainability, scalability, and ease of extension for future enhancements.
@@ -20,14 +20,14 @@ emergency_response_prediction/
 │ ├── x_test.csv
 │ └── y_train_u9upqBE.csv
 ├── src/
-│ ├── data_loader.py # Loads raw data from CSV files.
+│ ├── data_loader.py # Handles loading raw data from CSV files.
 │ ├── feature_engineering.py # Generates and preprocesses features for modeling.
 │ ├── model_selection.py # Manages data splitting for training and validation.
 │ ├── model_training.py # Orchestrates model training and evaluation.
 │ └── utils.py # Provides general utility functions (e.g., logging, metrics calculation).
-├── config.py # Configuration file for paths and parameters.
-├── requirements.txt # List of Python dependencies.
-├── README.md # This file.
+├── config.py # Configuration file for project paths and parameters.
+├── requirements.txt # Lists Python dependencies.
+└── README.md # This file.
 ```
 
 ## Dependencies
@@ -54,11 +54,11 @@ The `data/` directory requires the following CSV files to be present:
 *   `x_test.csv`: Testing features.
 *   `y_train_u9upqBE.csv`: Training target variables.
 
-**Note:** Due to licensing restrictions, the original dataset cannot be included in this repository.
+**Note:** Due to licensing restrictions, the original dataset cannot be included in this repository. Users must provide their own data files following this structure.
 
 ## Usage
 
-Follow these steps to set up and run the project:
+Follow these steps to set up and run the project locally:
 
 1.  **Clone the repository:**
     ```bash
@@ -72,7 +72,7 @@ Follow these steps to set up and run the project:
     ```
 
 3.  **Provide Data Files:**
-    Place `x_train.csv`, `x_test.csv`, and `y_train_u9upqBE.csv` into the `data/` directory.
+    Place your `x_train.csv`, `x_test.csv`, and `y_train_u9upqBE.csv` files into the `data/` directory.
 
 4.  **Run the training script:**
     ```bash
@@ -129,7 +129,7 @@ The performance of the models is assessed using the following standard evaluatio
 
 *   **Mean Absolute Error (MAE)**
 *   **Root Mean Squared Error (RMSE)**
-*   **R-squared**
+*   **R-squared (R²)**
 
 ## Next Steps
 
