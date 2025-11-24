@@ -48,13 +48,13 @@ pip install -r requirements.txt
 
 ### Data Requirements
 
-The `data/` directory requires the following CSV files to be present:
+The `data/` directory expects the following CSV files:
 
 *   `x_train.csv`: Training features.
 *   `x_test.csv`: Testing features.
 *   `y_train_u9upqBE.csv`: Training target variables.
 
-**Note:** Due to licensing restrictions, the original dataset cannot be included in this repository. Users must provide their own data files following this structure.
+**Important Note:** Due to licensing restrictions, the original dataset cannot be included in this repository. Users must provide their own data files following this specified structure.
 
 ## Usage
 
@@ -94,7 +94,7 @@ Upon execution, this script will perform the following actions:
 The `config.py` file serves as a central hub for all project configuration parameters, including:
 
 *   Data file paths.
-*   Definitions for categorical, numerical, and temporal features to be used.
+*   Definitions for categorical, numerical, and temporal features.
 *   The specific target variable chosen for prediction.
 *   Random seed for ensuring reproducibility.
 *   Test set size for the validation split.
