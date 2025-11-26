@@ -6,10 +6,10 @@ This repository presents a robust machine learning framework designed to predict
 
 The core objective of this project is to develop machine learning models capable of accurately forecasting one of two critical emergency response time metrics:
 
-*   `delta selection-departure`: The time elapsed from an emergency vehicle's selection to its actual departure from the station.
+*   `delta selection-departure`: The time elapsed from an emergency vehicle's selection until its actual departure from the station.
 *   `delta departure-presentation`: The duration from an emergency vehicle's departure until its arrival at the incident location.
 
-The codebase is structured into modular components covering data loading, feature engineering, model selection, training, and evaluation. This design ensures maintainability, scalability, and ease of extension for future enhancements.
+The codebase is structured into modular components covering data loading, feature engineering, model selection, training, and evaluation, ensuring maintainability, scalability, and ease of extension for future enhancements.
 
 ## File Structure
 
@@ -54,7 +54,7 @@ The `data/` directory expects the following CSV files:
 *   `x_test.csv`: Testing features.
 *   `y_train_u9upqBE.csv`: Training target variables.
 
-**Important Note:** Due to licensing restrictions, the original dataset cannot be included in this repository. Users must provide their own data files following this specified structure.
+**Important Note:** Due to licensing restrictions, the original dataset is not included in this repository. Users must provide their own data files following the specified structure.
 
 ## Usage
 
@@ -105,13 +105,13 @@ Users can easily modify this file to tailor the project to specific data inputs 
 
 The `feature_engineering.py` module is responsible for all feature engineering processes. Currently, it includes:
 
-*   Calculating the Haversine distance between geographical coordinates for spatial features.
+*   Calculating Haversine distance between geographical coordinates for spatial features.
 *   Extracting temporal features from datetime columns (e.g., hour, day of week, month, quarter).
 *   Imputing missing values to ensure data completeness.
 *   Applying one-hot encoding to categorical features for model compatibility.
 *   Standardizing numerical features to optimize model performance.
 
-This module is designed for easy customization and extension; users are encouraged to add new features or modify existing ones. Special emphasis should be placed on leveraging and incorporating features derived from OSRM data, which can significantly enhance predictive accuracy.
+This module is designed for easy customization and extension; users are encouraged to add new features or modify existing ones. Special emphasis should be placed on leveraging and incorporating features derived from OSRM data, as these can significantly enhance predictive accuracy.
 
 ## Model Training
 
@@ -121,11 +121,11 @@ The `model_training.py` module orchestrates the training and evaluation of vario
 *   Random Forest Regressor
 *   A foundational PyTorch Neural Network
 
-This module is designed for extensibility, allowing users to seamlessly integrate additional models or modify existing architectures. It also encompasses robust functionalities for model evaluation and selection based on validation set performance.
+This module is designed for extensibility, allowing users to seamlessly integrate additional models or modify existing architectures. It also includes robust functionalities for model evaluation and selection based on validation set performance.
 
 ## Evaluation Metrics
 
-The performance of the models is assessed using the following standard evaluation metrics:
+The models' performance is assessed using the following standard evaluation metrics:
 
 *   **Mean Absolute Error (MAE)**
 *   **Root Mean Squared Error (RMSE)**
@@ -133,9 +133,9 @@ The performance of the models is assessed using the following standard evaluatio
 
 ## Next Steps
 
-To further enhance this project and explore its full capabilities, consider the following actionable next steps:
+To further enhance this project and explore its full capabilities, consider the following next steps:
 
-*   **Customize Feature Engineering:** Adapt the `feature_engineering.py` module to generate more pertinent and domain-specific features for your dataset. Prioritize leveraging OSRM data and developing insightful interaction features to capture complex relationships.
+*   **Customize Feature Engineering:** Adapt the `feature_engineering.py` module to generate more pertinent and domain-specific features. Prioritize leveraging OSRM data and developing insightful interaction features to capture complex relationships.
 *   **Hyperparameter Tuning:** Implement advanced hyperparameter tuning techniques (e.g., `GridSearchCV`, `RandomizedSearchCV` from scikit-learn, or more sophisticated methods like Bayesian Optimization) to fine-tune model parameters for superior performance.
 *   **Explore Advanced Models:** Experiment with more sophisticated machine learning models, such as Gradient Boosting Machines (e.g., XGBoost, LightGBM, CatBoost) or more intricate Deep Learning architectures, to potentially uncover higher predictive power.
 *   **Experiment Tracking:** Integrate dedicated tools like MLflow, Weights & Biases, or TensorBoard to systematically track experiments, manage model versions, and compare different model iterations efficiently, fostering better reproducibility and insights.
