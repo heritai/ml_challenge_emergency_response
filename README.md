@@ -1,6 +1,6 @@
 # Emergency Response Time Prediction
 
-This repository presents a robust machine learning framework designed to predict critical emergency response times. By integrating diverse datasets, including emergency event logs, vehicle telemetry, and routing information from OSRM (Open Source Routing Machine), the framework aims to deliver highly accurate and actionable predictions.
+This repository introduces a robust machine learning framework specifically designed to predict critical emergency response times. By integrating diverse datasets, such as emergency event logs, vehicle telemetry, and detailed routing information from OSRM (Open Source Routing Machine), the framework aims to deliver highly accurate and actionable predictions.
 
 ## Overview
 
@@ -9,7 +9,7 @@ The core objective of this project is to develop machine learning models capable
 *   `delta selection-departure`: The time elapsed from an emergency vehicle's selection until its actual departure from the station.
 *   `delta departure-presentation`: The duration from an emergency vehicle's departure until its arrival at the incident location.
 
-The codebase is structured into modular components covering data loading, feature engineering, model selection, training, and evaluation, ensuring maintainability, scalability, and ease of extension for future enhancements.
+The codebase is structured into modular components covering data loading, feature engineering, model selection, training, and evaluation. This design ensures maintainability, scalability, and ease of extension for future enhancements.
 
 ## File Structure
 
@@ -40,7 +40,7 @@ This project requires the following Python libraries:
 *   geopy
 *   torch
 
-Install them using pip:
+You can install them using pip:
 
 ```bash
 pip install -r requirements.txt
@@ -54,7 +54,7 @@ The `data/` directory expects the following CSV files:
 *   `x_test.csv`: Testing features.
 *   `y_train_u9upqBE.csv`: Training target variables.
 
-**Important Note:** Due to licensing restrictions, the original dataset is not included in this repository. Users must provide their own data files following the specified structure.
+**Important Note:** Due to licensing restrictions, the original dataset is *not* included in this repository. Users are required to provide their own data files, structured according to these specifications.
 
 ## Usage
 
@@ -99,13 +99,13 @@ The `config.py` file serves as a central hub for all project configuration param
 *   Random seed for ensuring reproducibility.
 *   Test set size for the validation split.
 
-Users can easily modify this file to tailor the project to specific data inputs and requirements, ensuring flexibility and adaptability.
+Users can easily modify this file to tailor the project to specific data inputs and requirements, enhancing flexibility and adaptability.
 
 ## Feature Engineering
 
-The `feature_engineering.py` module is responsible for all feature engineering processes. Currently, it includes:
+The `feature_engineering.py` module handles all feature engineering processes. Currently, it includes:
 
-*   Calculating Haversine distance between geographical coordinates for spatial features.
+*   Calculating Haversine distance between geographical coordinates to derive spatial features.
 *   Extracting temporal features from datetime columns (e.g., hour, day of week, month, quarter).
 *   Imputing missing values to ensure data completeness.
 *   Applying one-hot encoding to categorical features for model compatibility.
@@ -115,7 +115,7 @@ This module is designed for easy customization and extension; users are encourag
 
 ## Model Training
 
-The `model_training.py` module orchestrates the training and evaluation of various machine learning models. Presently, it supports:
+The `model_training.py` module orchestrates the training and evaluation of various machine learning models. Currently, it supports:
 
 *   Linear Regression
 *   Random Forest Regressor
